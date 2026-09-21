@@ -16,5 +16,8 @@ def register_child():
         "guardian_contact": guardian_contact,
         "location": location
     }
-
+    
     return child
+# child =register_child()
+# print("\nRegistered child: ")
+# print(child)
