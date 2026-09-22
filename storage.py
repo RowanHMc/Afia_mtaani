@@ -12,14 +12,7 @@ def save_children(children):
         json.dump(children, file, indent=4)
 
 
-# test =  {
-#     "child_id": "CH-0001",
-#     "first_name": "Brian",
-#     "last_name": "Kamau",
-#     "date_of_birth": "2025-03-15",
-#     "guardian_name": "Mary Kamau",
-#     "location": "Kiamuri"
-# }
+
 # children = load_childeren()
 # children.append(test)
 # save_children(children)
