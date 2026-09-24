@@ -1,4 +1,4 @@
-[ 
+[
     {
         "child_id": "CH- 001",
         "first_name": "rowan",
@@ -16,5 +16,14 @@
         "guardian_name": "minato",
         "guardian_contact": "123455",
         "location": "konohagakure"
+    },
+    {
+        "child_id": "CH- 003",
+        "first_name": "rowan",
+        "last_name": "hadegu",
+        "date_of_birth": "13-05-2003",
+        "guardian_name": "uzumaki naruto",
+        "guardian_contact": "0745071737",
+        "location": "Nairobi"
     }
 ]

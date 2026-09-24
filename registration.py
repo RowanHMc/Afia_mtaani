@@ -1,15 +1,15 @@
 from id_generator import generate_id
 from storage import load_childeren, save_children
-from reg_validation import validate_name, validate_dob
+from reg_validation import validate_name, validate_dob, validate_location, validate_phone
 
 def register_child():
     print("\n===== REGISTER CHILD =====")
     first_name = validate_name("Enter First Name: ")
     last_name = validate_name("Enter Last Name: ")
     date_of_birth = validate_dob("Enter date of birth:DD-MM-YYYY: ")
-    guardian_name = input("Enter guardian Name: ")
-    guardian_contact = input("Enter Guardian phone number: ")
-    location = input("Enter location: ")
+    guardian_name = validate_name("Enter guardian Name: ")
+    guardian_contact = validate_phone("Enter Guardian phone number: ")
+    location = validate_location("Enter location: ")
     child_id = generate_id()
 
     child = {
