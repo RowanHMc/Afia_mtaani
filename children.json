@@ -25,5 +25,14 @@
         "guardian_name": "uzumaki naruto",
         "guardian_contact": "0745071737",
         "location": "Nairobi"
+    },
+    {
+        "child_id": "CH- 004",
+        "first_name": "Kaneki",
+        "last_name": "Ken",
+        "date_of_birth": "13-08-2002",
+        "guardian_name": "Ushikateyo",
+        "guardian_contact": "0745071737",
+        "location": "Nairobi"
     }
 ]
