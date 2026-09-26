@@ -51,7 +51,8 @@ def record_vaccination():
     print("\nSelect Vaccination:")
     print("Vaacine:", selected_vaccine["vaccine"])
     print("Dose:", selected_vaccine["dose"])
-
+    
+    
     # date of administration
     while True:
         date_administered = input("\nEnter date vaccine was given(DD-MM-YYYY):").strip()
@@ -59,7 +60,7 @@ def record_vaccination():
             print("Date cannot be empty")
             continue
         try:
-            vaccination_date = datetime.strptime(
+            administered_date = datetime.strptime(
                 date_administered,
                 "%d-%m-%Y"
             ).date()
@@ -67,18 +68,23 @@ def record_vaccination():
             child_dob = datetime.strptime(
                 child["date_of_birth"],
                 "%d-%m-%Y"
-            )
+            ).date()
 
             today = datetime.today().date()
 
-            if vaccination_date > today:
+            if administered_date > today:
                 print("Future dates invalid")
                 continue
-            if vaccination_date < child_dob:
+            if administered_date < child_dob:
                 print("Vaccination cannot be before child's date of birth")
-                continue
+            break
         except ValueError:
             print("Please enter a valid date. DD-MM-YYYY")
+
+        print("\nVaccination details:")
+        print("Vaccine:", selected_vaccine["vaccine"])
+        print("Dose:", selected_vaccine["dose"])
+        print("Date Administered:", date_administered)
 
 
 
