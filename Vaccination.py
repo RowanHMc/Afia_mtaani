@@ -1,3 +1,4 @@
+from datetime import datetime
 from storage import load_childeren, save_children
 from vaccination_schedule import VACCINATION_SCHEDULE
 
@@ -51,6 +52,33 @@ def record_vaccination():
     print("Vaacine:", selected_vaccine["vaccine"])
     print("Dose:", selected_vaccine["dose"])
 
+    # date of administration
+    while True:
+        date_administered = input("\nEnter date vaccine was given(DD-MM-YYYY):").strip()
+        if date_administered == "":
+            print("Date cannot be empty")
+            continue
+        try:
+            vaccination_date = datetime.strptime(
+                date_administered,
+                "%d-%m-%Y"
+            ).date()
+
+            child_dob = datetime.strptime(
+                child["date_of_birth"],
+                "%d-%m-%Y"
+            )
+
+            today = datetime.today().date()
+
+            if vaccination_date > today:
+                print("Future dates invalid")
+                continue
+            if vaccination_date < child_dob:
+                print("Vaccination cannot be before child's date of birth")
+                continue
+        except ValueError:
+            print("Please enter a valid date. DD-MM-YYYY")
 
 
 
