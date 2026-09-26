@@ -35,6 +35,25 @@ def record_vaccination():
             "Dose", vaccine["dose"]
         )
 
+    # vaccine selection
+    while True:
+        try:
+            selection = int(input("\nSelect vaccine:"))
+            if 1 <= selection <= len(VACCINATION_SCHEDULE):
+                break
+            print("Invalid. Choose a number from the list")
+        except ValueError:
+            print("Please enter a Number.")
+    # get the selected vaccine         
+    selected_vaccine = VACCINATION_SCHEDULE[selection - 1]
+
+    print("\nSelect Vaccination:")
+    print("Vaacine:", selected_vaccine["vaccine"])
+    print("Dose:", selected_vaccine["dose"])
+
+
+
+
 
 
 record_vaccination()      
