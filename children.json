@@ -1,38 +1,11 @@
 [
     {
-        "child_id": "CH- 001",
-        "first_name": "rowan",
-        "last_name": "hadegu",
+        "child_id": "CH-0001",
+        "first_name": "Itadori",
+        "last_name": "Yuji",
         "date_of_birth": "13-07-2003",
-        "guardian_name": "Naruto",
-        "guardian_contact": "1234",
-        "location": "Nairobi"
-    },
-    {
-        "child_id": "CH- 002",
-        "first_name": "kushina",
-        "last_name": "uzumaku",
-        "date_of_birth": "11-11-1234",
-        "guardian_name": "minato",
-        "guardian_contact": "123455",
-        "location": "konohagakure"
-    },
-    {
-        "child_id": "CH- 003",
-        "first_name": "rowan",
-        "last_name": "hadegu",
-        "date_of_birth": "13-05-2003",
-        "guardian_name": "uzumaki naruto",
-        "guardian_contact": "0745071737",
-        "location": "Nairobi"
-    },
-    {
-        "child_id": "CH- 004",
-        "first_name": "Kaneki",
-        "last_name": "Ken",
-        "date_of_birth": "13-08-2002",
-        "guardian_name": "Ushikateyo",
-        "guardian_contact": "0745071737",
-        "location": "Nairobi"
+        "guardian_name": "Satoru Gojo",
+        "guardian_contact": "0739089841",
+        "location": "Kyoto"
     }
 ]

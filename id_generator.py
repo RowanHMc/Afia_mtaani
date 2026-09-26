@@ -11,5 +11,5 @@ def generate_id():
     with open(COUNTER_FILE, "w") as file:
         json.dump(counter,file, indent=4)
 
-    return f"CH-{counter["last_id"]: 04d}"          
+    return f"CH-{counter["last_id"]:04d}"          
         

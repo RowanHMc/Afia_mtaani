@@ -84,6 +84,22 @@ def record_vaccination():
         print("\nVaccination details:")
         print("Vaccine:", selected_vaccine["vaccine"])
         print("Dose:", selected_vaccine["dose"])
+
+        # add vaccination to child record
+        if "Vaccinations" not in child:
+            child["Vaccinations"] = []
+
+        vaccination = {
+            "vaccine": selected_vaccine["vaccine"],
+            "dose": selected_vaccine["dose"],
+            "date_administered": date_administered
+        } 
+        child["Vaccinations"].append(vaccination) 
+        save_children(children)
+
+        print("\nVaccination recorded successfully.")
+        print("Vaccine:", selected_vaccine["vaccine"])
+        print("Dose:", selected_vaccine["dose"])
         print("Date Administered:", date_administered)
 
 
