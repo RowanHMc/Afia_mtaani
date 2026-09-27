@@ -99,5 +99,21 @@
                 "date_administered": "26-08-2026"
             }
         ]
+    },
+    {
+        "child_id": "CH-0007",
+        "first_name": "Japheth",
+        "last_name": "Wamatiangi",
+        "date_of_birth": "27-08-2026",
+        "guardian_name": "Wamatiangi Senior",
+        "guardian_contact": "0734567890",
+        "location": "Shamakoko",
+        "Vaccinations": [
+            {
+                "vaccine": "BCG",
+                "dose": 1,
+                "date_administered": "27-08-2026"
+            }
+        ]
     }
 ]
