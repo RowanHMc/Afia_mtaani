@@ -12,6 +12,27 @@
                 "vaccine": "BCG",
                 "dose": 1,
                 "date_administered": "27-08-2003"
+            },
+            {
+                "vaccine": "Vitamin A",
+                "dose": 1,
+                "date_administered": "30-11-2003"
+            }
+        ]
+    },
+    {
+        "child_id": "CH-0002",
+        "first_name": "Hiruzen",
+        "last_name": "Sarutobi",
+        "date_of_birth": "13-06-1990",
+        "guardian_name": "Konoha Gakure",
+        "guardian_contact": "0712345678",
+        "location": "Leaf Village",
+        "Vaccinations": [
+            {
+                "vaccine": "Pentavalent",
+                "dose": 1,
+                "date_administered": "27-08-1990"
             }
         ]
     }
