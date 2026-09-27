@@ -83,5 +83,21 @@
                 "date_administered": "21-08-2026"
             }
         ]
+    },
+    {
+        "child_id": "CH-0006",
+        "first_name": "Rowan",
+        "last_name": "Hadegu",
+        "date_of_birth": "26-08-2026",
+        "guardian_name": "Senior",
+        "guardian_contact": "0745071737",
+        "location": "Nairobi",
+        "Vaccinations": [
+            {
+                "vaccine": "BCG",
+                "dose": 1,
+                "date_administered": "26-08-2026"
+            }
+        ]
     }
 ]

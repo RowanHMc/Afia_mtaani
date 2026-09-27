@@ -14,4 +14,26 @@ MENU = """
 6. Exit
 """
 
+def main():
+    while True:
+        print(MENU)
+        choice = input("Select an option: ").strip()
 
+        if choice == "1":
+            register_child()
+        elif choice == "2":
+            search_child()
+        elif choice == "3":
+            record_vaccination()
+        elif choice == "4":
+            get_vaccination_summary()
+        elif choice == "5":
+            get_vaccination_alerts()
+        elif choice == "6":
+            print("\nGoogbye")
+            break
+        else:
+            print("\nInvalid Option. Enter number from 1 to 6")
+
+if __name__ == "__main__":
+    main()
