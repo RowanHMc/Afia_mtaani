@@ -3,10 +3,14 @@ from storage import load_childeren
 from vaccination_status import check_vaccination_status
 
 def get_vaccination_alerts():
+
     children = load_childeren()
 
     overdue = []
     upcoming =[]
+
+    overdue_children = set()
+    upcoming_children = set()
 
     print("\n===== VACCINATION ALERTS =====")
     print("Total children:", len(children))
@@ -23,8 +27,9 @@ def get_vaccination_alerts():
                     "dose": result["dose"],
                     "expected_date": result["expected_date"]
                 })
+                overdue_children.add(child["child_id"]) 
 
-            elif result["status"] == "upcoming":
+            elif result["status"] == "Upcoming":
                 today = datetime.today().date()
 
                 days_till_due = (result["expected_date"] - today).days
@@ -36,10 +41,13 @@ def get_vaccination_alerts():
                         "dose": result["dose"],
                         "expected_date": result["expected_date"],
                         "days_til_due": days_till_due
-                    })    
+                    })
+
+                    upcoming_children.add(child["child_id"])    
 
     print("\n===== OVERDUE VACCINATIONS =====")
     print("Total overdue vaccinations:", len(overdue))
+    print("Children affected:", len(overdue_children))
 
     for alert in overdue:
         print(
@@ -52,9 +60,11 @@ def get_vaccination_alerts():
             "| Expected:", alert["expected_date"]
         )
 
+
     print("\n===== UPCOMING VACCINATIONS =====")
 
     print("Total upcoming vaccinations:", len(upcoming))
+    print("Children affected:", len(upcoming_children))
 
     for alert in upcoming:
         print(
@@ -66,6 +76,10 @@ def get_vaccination_alerts():
             "Dose", alert["dose"],
             "| Due:", alert["expected_date"],
             "| Due in:", alert["days_til_due"], "days"
-        )               
+        )
+
+    
+
+                      
 
 get_vaccination_alerts()
