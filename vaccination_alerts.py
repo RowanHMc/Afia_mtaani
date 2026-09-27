@@ -56,7 +56,17 @@ def get_vaccination_alerts():
         if child_id not in grouped_overdue:
             grouped_overdue[child_id] = []
 
-        grouped_overdue[child_id].append(alert)    
+        grouped_overdue[child_id].append(alert)   
+
+    # upcoming grouped
+    for alert in upcoming:
+        child_id = alert["child_id"]
+        if child_id not in grouped_upcoming:
+            grouped_upcoming[child_id] = []
+
+        grouped_upcoming[child_id].append(alert)   
+
+    
 
     print("\n===== OVERDUE VACCINATIONS =====")
     print("Total overdue vaccinations:", len(overdue))
