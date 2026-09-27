@@ -20,12 +20,17 @@ def get_vaccination_alerts():
 
         for result in status_results:
             if result["status"] == "Overdue":
+                today = datetime.today().date()
+                days_overdue = (
+                    today - result["expected_date"]
+                ).days
                 overdue.append({
                     "child_id": child["child_id"],
                     "name": child["first_name"] + " " + child["last_name"],
                     "vaccine": result["vaccine"],
                     "dose": result["dose"],
-                    "expected_date": result["expected_date"]
+                    "expected_date": result["expected_date"],
+                    "days_overdue": days_overdue
                 })
                 overdue_children.add(child["child_id"]) 
 
@@ -45,6 +50,7 @@ def get_vaccination_alerts():
 
                     upcoming_children.add(child["child_id"])    
 
+    upcoming.sort(key=lambda alert: alert["expected_date"])
 
     # Grouping the alerts
     grouped_overdue = {}
@@ -83,7 +89,9 @@ def get_vaccination_alerts():
                 "   -",
                 alert["vaccine"],
                 "Dose", alert["dose"],
-                "| Expected:", alert["expected_date"]
+                "| Expected:", alert["expected_date"],
+                "| Overdue by:", alert["days_overdue"],
+                "days"
             )
 
 
