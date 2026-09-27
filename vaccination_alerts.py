@@ -1,10 +1,10 @@
 from datetime import datetime
-from storage import load_childeren
+from storage import load_children
 from vaccination_status import check_vaccination_status
 
 def get_vaccination_alerts():
 
-    children = load_childeren()
+    children = load_children()
 
     overdue = []
     upcoming =[]
@@ -115,10 +115,7 @@ def get_vaccination_alerts():
                 "| Due in:", alert["days_til_due"],
                 "days"
             )
-            
 
-    
 
-                      
-
-get_vaccination_alerts()
+if __name__ == "__main__":            
+    get_vaccination_alerts()

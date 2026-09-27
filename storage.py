@@ -2,7 +2,7 @@ import json
 
 DATA_FILE = "children.json"
 
-def load_childeren():
+def load_children():
     with open(DATA_FILE, "r") as file:
         children = json.load(file)
     return children 

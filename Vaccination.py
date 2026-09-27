@@ -1,5 +1,5 @@
 from datetime import datetime
-from storage import load_childeren, save_children
+from storage import load_children, save_children
 from vaccination_schedule import VACCINATION_SCHEDULE
 
 
@@ -8,7 +8,7 @@ def record_vaccination():
     print("\n===== RECORD VACCINATION =====")
     child_id = input("Enter child ID: ").strip()
 
-    children = load_childeren()
+    children = load_children()
     child = None
 
     for current_child in children:

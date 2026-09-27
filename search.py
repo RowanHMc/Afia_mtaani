@@ -1,8 +1,8 @@
-from storage import load_childeren
+from storage import load_children
 
 
 def search_child():
-    children = load_childeren()
+    children = load_children()
 
     child_id = input("Enter child ID: ").strip()
 

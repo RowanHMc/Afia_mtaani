@@ -1,8 +1,8 @@
-from storage import load_childeren
+from storage import load_children
 from vaccination_status import check_vaccination_status
 
 def get_vaccination_summary():
-    children = load_childeren()
+    children = load_children()
 
     print("\n===== VACCINATION SUMMARY =====")
 
@@ -87,7 +87,8 @@ def get_vaccination_summary():
         print("Overdue:", overdue)
         print("Total scheduled:", total_scheduled)
 
-get_vaccination_summary()
+if __name__ == "__main__":    
+    get_vaccination_summary()
 
 
                 

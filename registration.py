@@ -1,5 +1,5 @@
 from id_generator import generate_id
-from storage import load_childeren, save_children
+from storage import load_children, save_children
 from reg_validation import validate_name, validate_dob, validate_location, validate_phone
 
 def register_child():
@@ -22,7 +22,7 @@ def register_child():
         "location": location
     }
 
-    children = load_childeren() #load existing 
+    children = load_children() #load existing 
     children.append(child) # add new to existing
     save_children(children) # save list again    
     return child
