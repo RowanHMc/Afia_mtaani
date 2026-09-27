@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 from vaccination_schedule import VACCINATION_SCHEDULE
+from storage import load_childeren
 
 def check_vaccination_status(child):
     child_dob = datetime.strptime(
@@ -12,7 +13,7 @@ def check_vaccination_status(child):
     if "Vaccinations" not in child:
         child["Vaccinations"] = []
 
-    result = []
+    results = []
 
     for scheduled_vaccine in VACCINATION_SCHEDULE:
         expected_date = child_dob + timedelta(
@@ -21,12 +22,46 @@ def check_vaccination_status(child):
 
         status = "upcoming" 
 
-    for vaccination in child["Vaccinations"]:
-        if(
-            vaccination["vaccine"] == scheduled_vaccine["vaccine"]
-            and vaccination["dose"] == scheduled_vaccine["dose"]
-        ):
-            status = "completed"
-            break
-    
-            
+        for vaccination in child["Vaccinations"]:
+            if(
+                vaccination["vaccine"] == scheduled_vaccine["vaccine"]
+                and vaccination["dose"] == scheduled_vaccine["dose"]
+            ):
+                status = "completed"
+                break
+
+        if status != "completed":
+            if expected_date < today:
+                status = "Overdue"
+
+        results.append({
+            "vaccine": scheduled_vaccine["vaccine"],
+            "dose": scheduled_vaccine["dose"],
+            "expected_date": expected_date,
+            "status": status
+        })
+    return results  
+
+from storage import load_childeren
+
+# check status
+# children = load_childeren()
+
+# if children:
+#     child = children[1]
+
+#     results = check_vaccination_status(child)
+
+#     print("\n===== VACCINATION STATUS =====")
+#     print("Child:", child["first_name"], child["last_name"])
+#     print()
+
+#     for result in results:
+#         print(
+#             result["vaccine"],
+#             "Dose", result["dose"],
+#             "| Expected:", result["expected_date"],
+#             "| Status:", result["status"]
+#         )
+# else:
+#     print("No children registered.")
