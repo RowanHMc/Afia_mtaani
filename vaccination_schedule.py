@@ -90,4 +90,3 @@ VACCINATION_SCHEDULE = [
         "age_weeks": 78
     }
 ]
-print(VACCINATION_SCHEDULE)

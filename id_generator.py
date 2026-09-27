@@ -1,10 +1,14 @@
 import json
+import os
 
 COUNTER_FILE = "id_counter.json"
 
 def generate_id():
-    with open(COUNTER_FILE, "r") as file:
-        counter = json.load(file) #read file to get get last id
+    if not os.path.exists(COUNTER_FILE):
+        counter = {"last_id": 0}
+    else:    
+        with open(COUNTER_FILE, "r") as file:
+            counter = json.load(file) #read file to get get last id
 
     counter["last_id"] += 1 #adds 1 to previous id to get new id
 

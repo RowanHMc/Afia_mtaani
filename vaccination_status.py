@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from vaccination_schedule import VACCINATION_SCHEDULE
-from storage import load_children
+# from storage import load_children
 
 def check_vaccination_status(child):
     child_dob = datetime.strptime(
@@ -42,7 +42,7 @@ def check_vaccination_status(child):
         })
     return results  
 
-from storage import load_children
+
 
 # check status
 # children = load_children()

@@ -1,8 +1,12 @@
 import json
+import os
 
 DATA_FILE = "children.json"
 
 def load_children():
+    if not os.path.exists(DATA_FILE):
+        return[]
+    
     with open(DATA_FILE, "r") as file:
         children = json.load(file)
     return children 
