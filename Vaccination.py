@@ -113,4 +113,5 @@ def record_vaccination():
     print("\nVaccination recorded successfully.")    
 
 
-record_vaccination()      
+if __name__ == "__main__":
+    record_vaccination()      
