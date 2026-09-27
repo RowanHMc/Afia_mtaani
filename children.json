@@ -1,5 +1,5 @@
 [
-   {
+    {
         "child_id": "CH-0001",
         "first_name": "Itadori",
         "last_name": "Yuji",
@@ -33,6 +33,54 @@
                 "vaccine": "Pentavalent",
                 "dose": 1,
                 "date_administered": "27-08-1990"
+            }
+        ]
+    },
+    {
+        "child_id": "CH-0003",
+        "first_name": "Maki",
+        "last_name": "Zenin",
+        "date_of_birth": "13-07-2026",
+        "guardian_name": "Toji Zenin",
+        "guardian_contact": "0112345678",
+        "location": "Shibuya",
+        "Vaccinations": [
+            {
+                "vaccine": "BCG",
+                "dose": 1,
+                "date_administered": "13-07-2026"
+            }
+        ]
+    },
+    {
+        "child_id": "CH-0004",
+        "first_name": "Izuku",
+        "last_name": "Midoriya",
+        "date_of_birth": "29-08-2026",
+        "guardian_name": "Inko Midoriya",
+        "guardian_contact": "0787654321",
+        "location": "Nakuru",
+        "Vaccinations": [
+            {
+                "vaccine": "BCG",
+                "dose": 1,
+                "date_administered": "29-08-2026"
+            }
+        ]
+    },
+    {
+        "child_id": "CH-0005",
+        "first_name": "Naruto",
+        "last_name": "Uzumaki",
+        "date_of_birth": "21-08-2026",
+        "guardian_name": "Namikaze Minato",
+        "guardian_contact": "0709876543",
+        "location": "Konoha",
+        "Vaccinations": [
+            {
+                "vaccine": "BCG",
+                "dose": 1,
+                "date_administered": "21-08-2026"
             }
         ]
     }
