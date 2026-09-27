@@ -110,12 +110,7 @@ def record_vaccination():
 
     save_children(children)
 
-    print("\nVaccination recorded successfully.")
-        
-        
-
-
-
+    print("\nVaccination recorded successfully.")    
 
 
 record_vaccination()      
