@@ -24,5 +24,5 @@ def search_child():
     print("\nChild not found")
     return None
 
-
-search_child()
+if __name__ == "__main__":
+    search_child()
