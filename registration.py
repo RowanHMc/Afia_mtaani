@@ -28,6 +28,7 @@ def register_child():
     return child
 
 
-child =register_child()
-print("\nRegistered child: ")
-print(child)
+if __name__ == "__main__":
+    child =register_child()
+    print("\nRegistered child: ")
+    print(child)
