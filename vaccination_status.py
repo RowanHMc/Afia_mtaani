@@ -19,4 +19,14 @@ def check_vaccination_status(child):
             weeks=scheduled_vaccine["age_weeks"]
         )   
 
-        status = upcoming 
+        status = "upcoming" 
+
+    for vaccination in child["Vaccinations"]:
+        if(
+            vaccination["vaccine"] == scheduled_vaccine["vaccine"]
+            and vaccination["dose"] == scheduled_vaccine["dose"]
+        ):
+            status = "completed"
+            break
+    
+            
