@@ -72,16 +72,19 @@ def get_vaccination_alerts():
     print("Total overdue vaccinations:", len(overdue))
     print("Children affected:", len(overdue_children))
 
-    for alert in overdue:
+    for child_id, alerts in grouped_overdue.items():
         print(
-            alert["child_id"],
+            child_id,
             "|",
-            alert["name"],
-            "|",
-            alert["vaccine"],
-            "Dose", alert["dose"],
-            "| Expected:", alert["expected_date"]
+            alerts[0]["name"]
         )
+        for alert in alerts:
+            print(
+                "   -",
+                alert["vaccine"],
+                "Dose", alert["dose"],
+                "| Expected:", alert["expected_date"]
+            )
 
 
     print("\n===== UPCOMING VACCINATIONS =====")
@@ -89,17 +92,22 @@ def get_vaccination_alerts():
     print("Total upcoming vaccinations:", len(upcoming))
     print("Children affected:", len(upcoming_children))
 
-    for alert in upcoming:
+    for child_id, alerts in grouped_upcoming.items():
         print(
-            alert["child_id"],
+            child_id,
             "|",
-            alert["name"],
-            "|",
-            alert["vaccine"],
-            "Dose", alert["dose"],
-            "| Due:", alert["expected_date"],
-            "| Due in:", alert["days_til_due"], "days"
+            alerts[0]["name"],   
         )
+        for alert in alerts:
+            print(
+                "   -",
+                alert["vaccine"],
+                "Dose", alert["dose"],
+                "| Due:", alert["expected_date"],
+                "| Due in:", alert["days_til_due"],
+                "days"
+            )
+            
 
     
 
