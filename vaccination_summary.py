@@ -15,6 +15,7 @@ def get_vaccination_summary():
 
         completed_vaccines = []
         upcoming_vaccines = []
+        overdue_vaccines = []
 
         for result in status_results:
             if result["status"] == "completed":
@@ -37,6 +38,12 @@ def get_vaccination_summary():
             elif result["status"] == "Overdue":
                 overdue += 1
 
+                overdue_vaccines.append({
+                    "vaccine": result["vaccine"],
+                    "dose": result["dose"],
+                    "expected_date": result["expected_date"]
+                })
+
         total_scheduled = len(status_results)
 
         print("\nCompleted vaccinations:")
@@ -50,7 +57,7 @@ def get_vaccination_summary():
             )
 
         print("\nUpcoming vaccinations:")
-        for vaccinations in upcoming_vaccines:
+        for vaccination in upcoming_vaccines:
             print(
                  "   -",
                 vaccination["vaccine"],
@@ -58,8 +65,21 @@ def get_vaccination_summary():
                 vaccination["dose"],
                 "| Expected:",
                 vaccination["expected_date"]
-    
             )
+
+
+        print("\nOverdue vaccinations:")
+        for vaccination in overdue_vaccines:
+            print(
+                 "   -",
+                vaccination["vaccine"],
+                "Dose",
+                vaccination["dose"],
+                "| Expected:",
+                vaccination["expected_date"]
+            )
+
+        
 
         print("\n" + child["child_id"], "|", child["first_name"], child["last_name"])
         print("Completed:", completed)
