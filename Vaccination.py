@@ -92,7 +92,7 @@ def record_vaccination():
         child["Vaccinations"] = []
 
     # to check if vaccine is already recorded to avoin duplications
-    for existing_vaccination in child["vaccinations"]:
+    for existing_vaccination in child["Vaccinations"]:
         if(
             existing_vaccination["vaccine"] == selected_vaccine["vaccine"]
             and existing_vaccination["dose"] == selected_vaccine["dose"]
