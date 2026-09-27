@@ -45,6 +45,19 @@ def get_vaccination_alerts():
 
                     upcoming_children.add(child["child_id"])    
 
+
+    # Grouping the alerts
+    grouped_overdue = {}
+    grouped_upcoming ={}
+
+    #overdue grouped
+    for alert in overdue:
+        child_id = alert["child_id"]
+        if child_id not in grouped_overdue:
+            grouped_overdue[child_id] = []
+
+        grouped_overdue[child_id].append(alert)    
+
     print("\n===== OVERDUE VACCINATIONS =====")
     print("Total overdue vaccinations:", len(overdue))
     print("Children affected:", len(overdue_children))
